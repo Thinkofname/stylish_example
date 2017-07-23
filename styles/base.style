@@ -1,0 +1,313 @@
+background {
+    width = parent_width,
+    height = parent_height,
+
+    background_color = "#36393e",
+}
+
+server_list {
+    width = 70,
+    height = parent_height,
+
+    background_color = "#1e2124",
+}
+
+channel_list {
+    width = 240,
+    x = 70,
+    height = parent_height,
+
+    background_color = "#2f3136",
+}
+
+user_menu {
+    width = parent_width,
+    height = 55,
+
+    background_color = "#2f3136",
+    shadow = shadow(0.0, 1.0, rgba(38, 39, 43, 1.0), 1.0, 0.0, "outset"),
+}
+
+status_bar {
+    width = parent_width,
+    height = 53,
+    y = parent_height - 53,
+
+    background_color = "#2a2c31",
+}
+
+channel_bar {
+    x = 310,
+    width = parent_width - 310,
+    height = 55,
+
+    background_color = "#36393e",
+    shadow = shadow(0.0, 1.0, rgba(38, 39, 43, 1.0), 1.0, 0.0, "outset"),
+}
+
+user_list {
+    width = 240,
+    x = parent_width - 240,
+    height = parent_height - 55,
+    y = 55,
+
+    background_color = "#2f3136",
+
+    layout = "rows",
+
+    auto_size = false,
+}
+
+user_list > section {
+    width = parent_width,
+    height = 50,
+}
+
+user_list > section > @text {
+    font = "FiraSans-Bold",
+    font_size = 13,
+    font_color = "#7f8184",
+    x = 30,
+    y = parent_height - 20,
+    width = parent_width,
+    height = 15,
+}
+
+user_list > user {
+    height = 40,
+
+    can_hover = true,
+}
+
+user_list > user(hover=true) {
+    background_color = rgba(255, 255, 255, 0.1),
+}
+
+user_list > user > icon {
+    background_color = rgba(255, 255, 255, 0.5),
+    width = 30,
+    height = 30,
+    x = 30,
+    y = 5,
+}
+
+user_list > user > name {
+    width = parent_width - 40,
+    height = 20,
+    y = 5,
+    x = 70,
+}
+
+user_list > user(col=col) > name > @text {
+    font = "FiraSans-Regular",
+    font_size = 16,
+    font_color = col,
+    width = parent_width,
+    height = parent_height,
+}
+
+user_list > user > playing {
+    width = parent_width - 40,
+    height = 20,
+    y = 20,
+    x = 70,
+    layout = "lined"
+}
+
+user_list > user > playing > @text {
+    font = "FiraSans-Regular",
+    font_size = 12,
+    font_color = "#7f8489",
+}
+
+user_list > user > playing > @text(game=true) {
+    font = "FiraSans-Bold",
+    font_color = "#8a8e94",
+}
+
+
+chat_area {
+    x = 310,
+    y = 55,
+    width = parent_width - (310 + 240),
+    height = parent_height - 55 - 75,
+
+    layout = "push_bottom",
+}
+
+chat_area > content {
+    width = parent_width,
+    layout = "rows",
+}
+
+chat_area > content > message {
+    width = parent_width,
+    min_width = parent_width,
+    max_height = parent_height,
+    auto_size = true,
+}
+
+chat_area > content > message > icon {
+    x = 20,
+    y = 20,
+    width = 40,
+    height = 40,
+
+    background_color = "#ffffff",
+}
+
+chat_area > content > message > author {
+    max_width = parent_width,
+    line_height = 20,
+    x = 80,
+    y = 20,
+
+    layout = "lined",
+}
+
+chat_area > content > message > author > @text {
+    font = "FiraSans-Regular",
+    font_size = 17,
+    font_color = "#5b5d61",
+}
+
+chat_area > content > message > author > @text(col=col) {
+    font_size = 19,
+    font_color = col,
+}
+
+chat_area > content > message > content {
+    x = 80,
+    y = 40,
+
+    max_width = parent_width - 100,
+    layout = "lined",
+    line_height = 20,
+}
+
+chat_area > content > message > content > @text {
+    font = "FiraSans-Regular",
+    font_size = 19,
+    font_color = "#d6d8db",
+}
+
+chat_area > content > message > content > @text(bold=true) {
+    font = "FiraSans-Bold",
+}
+
+chat_area > content > message > content > @text(italic=true) {
+    font = "FiraSans-Italic",
+}
+
+chat_area > content > message > content > @text(bold=true, italic=true) {
+    font = "FiraSans-BoldItalic",
+}
+
+chat_area > content > message > content > @text(mono=true) {
+    font = "FiraMono-Regular",
+}
+
+chat_area > content > message > content > @text(col=col) {
+    font_color = col,
+}
+
+message_box {
+    x = 310,
+    y = parent_height - 75,
+    width = parent_width - (310 + 240),
+    height = 75,
+}
+
+message_box > textbox {
+    x = 10,
+    y = 10,
+    height = 55,
+    width = parent_width - 20,
+}
+
+textbox {
+    background_color = rgba(200, 200, 200, 0.2),
+    border_width = border_width(2.0, 2.0),
+    border = border(bside(rgba(0, 0, 0, 0.2), "solid")),
+    can_focus = true,
+    layout = "center",
+
+    on_mouse_up = "focus",
+    on_focus = "textbox",
+    on_unfocus = "textbox",
+    on_update = "textbox",
+    on_char_input = "textbox",
+    on_key_up = "textbox",
+    on_key_down = "textbox",
+}
+
+textbox(focused=true) {
+    background_color = rgb(255, 255, 255),
+    border = border(bside("#CCCC00", "solid")),
+    shadow = shadow(0.0, 0.0, rgba(255, 255, 0, 0.5), 4.0, 0.0, "outset"),
+}
+
+textbox > content {
+    layout = "lined",
+    line_height = 20,
+    align_width = false,
+    x = 15,
+}
+
+textbox > content > @text {
+    font = "FiraSans-Regular",
+    font_size = 16,
+    font_color = rgb(0, 0, 0),
+}
+
+textbox > content > cursor {
+    width = 2,
+    height = 10,
+    background_color = rgb(0, 0, 0),
+}
+
+channels {
+    width = parent_width,
+    x = 0,
+    height = parent_height - 100,
+    y = 55,
+
+    layout = "rows",
+
+    auto_size = false,
+}
+
+channels > header {
+    width = parent_width,
+    height = 50,
+}
+
+channels > header > @text {
+    font = "FiraSans-Bold",
+    font_size = 13,
+    font_color = "#7f8184",
+    x = 18,
+    y = parent_height - 20,
+    width = parent_width,
+    height = 15,
+}
+
+channels > channel {
+    height = 30,
+
+    can_hover = true,
+}
+
+channels > channel(hover=true) {
+    background_color = rgba(255, 255, 255, 0.1),
+}
+
+channels > channel > @text {
+    font = "FiraSans-Regular",
+    font_size = 20,
+    font_color = "#7f8184",
+    x = 18,
+    y = 2,
+    width = parent_width,
+    height = 25,
+}

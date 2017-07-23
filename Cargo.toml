@@ -1,0 +1,15 @@
+[package]
+name = "stylish_discord"
+version = "0.1.0"
+authors = ["Matthew Collins <thethinkofdeath@gmail.com>"]
+
+[dependencies]
+sdl2 = "0.30.0"
+chrono = "0.4"
+
+[dependencies.stylish]
+git = "https://github.com/thinkofname/stylish"
+rev = "9476799958f9fbf000dab8fccd87f48e3bb9ae35"
+[dependencies.stylish_webrender]
+git = "https://github.com/thinkofname/stylish"
+rev = "9476799958f9fbf000dab8fccd87f48e3bb9ae35"

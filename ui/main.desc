@@ -1,0 +1,125 @@
+background {
+    server_list {
+
+    }
+    chat_area {
+        content {
+            message {
+                icon
+                author {
+                    "Thinkofname"(col="#1abc9c")
+                    " Today at 13:37"
+                }
+                content {
+                    "This is a test message."
+                    " It shows the things supported in this dummy client."
+                    " Things like "
+                    "bold"(bold=true)
+                    " italic"(italic=true)
+                    " and "
+                    "both."(bold=true,italic=true)
+                }
+            }
+            message {
+                icon
+                author {
+                    "Thinkofname"(col="#1abc9c")
+                    " Today at 13:38"
+                }
+                content {
+                    "Other things. "
+                    "Red "(col="#ff0000")
+                    "Green "(col="#00ff00")
+                    "Blue. "(col="#0000ff")
+                    "Monospaced code text"(mono=true)
+                }
+            }
+            message {
+                icon
+                author {
+                    "Thinkofname"(col="#1abc9c")
+                    " Today at 13:39"
+                }
+                content {
+                    "You can type in the textbox below and thats about it currently. "
+                    "In theory you can do pretty much everything with this (the renderer being the main limit), "
+                    "you just have to implement the style rules and the event handlers."
+                }
+            }
+        }
+    }
+    message_box {
+        textbox(id="messages") {
+            content {
+                ""
+            }
+        }
+    }
+    user_list {
+        section {
+            "ADMIN-1"
+        }
+        user(col="#1abc9c") {
+            icon
+            name {
+                "Thinkofname"
+            }
+            playing {
+                "Playing "
+                "A game"(game=true)
+            }
+        }
+        section {
+            "MOD-1"
+        }
+        user(col="#11806a") {
+            icon
+            name {
+                "TheUnnamedDude"
+            }
+        }
+        user(col="#11806a") {
+            icon
+            name {
+                "Cldfire"
+            }
+            playing {
+                "Playing "
+                "Oversalt"(game=true)
+            }
+        }
+        user(col="#11806a") {
+            icon
+            name {
+                "Scetch"
+            }
+        }
+    }
+    channel_list {
+        user_menu {
+        }
+        channels {
+            header {
+                "TEXT CHANNELS"
+            }
+            channel {
+                "# general"
+            }
+            channel {
+                "# channel2"
+            }
+            channel {
+                "# channel3"
+            }
+            header {
+                "VOICE CHANNELS"
+            }
+        }
+        status_bar {
+
+        }
+    }
+    channel_bar {
+
+    }
+}
